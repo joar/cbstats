@@ -75,11 +75,22 @@ class CraftBukkitStats:
         except KeyError:
             return False
 
+    def get_connected(self):
+        ''' Returns a dictionary of the currently connected users.
+        Example:
+        
+        '''
+        try:
+            return self.connected
+        except AttributeError:
+            self.get_usage_stats()
+            return self.connected
+
     def get_usage_stats(self):
         f = open( self.file_server_log, encoding = 'utf-8')
         lines = f.read().splitlines()
         
-        connected = dict()
+        self.connected = dict()
         times = list()
         self.connected_log = list()
         connected_time_average = float()
@@ -94,20 +105,24 @@ class CraftBukkitStats:
                 self.connected_log.append('{date} {time} {name} connected'.format( debug=groups, date=match_connect.group('date'), time=match_connect.group('time'), name=match_connect.group('user') ) )
                 
                 time_connect = time.strptime( match_connect.group('date') + ' ' + match_connect.group('time'), '%Y-%m-%d %H:%M:%S')
-                connected[ match_connect.group('user') ] = time_connect
+                self.connected[ match_connect.group('user') ] = time_connect
                 
             ''' Search for a line in the server log that matches the "disconnected" pattern '''
             match_disconnect = re.search('^(?P<date>[0-9-]+) (?P<time>[0-9:]+) (.*) (?P<user>\w+) lost connection: disconnect\.(\w+)$', line)
             if match_disconnect:
                 time_disconnect = time.strptime( match_disconnect.group('date') + ' ' + match_disconnect.group('time'), '%Y-%m-%d %H:%M:%S')
-                delta = ( time.mktime( time_disconnect ) -time.mktime(  connected[ match_disconnect.group('user') ] ) )
+                delta = ( time.mktime( time_disconnect ) -time.mktime(  self.connected[ match_disconnect.group('user') ] ) )
                 delta_format = datetime.timedelta( seconds=int(delta) )
+
                 self.connected_log.append('{date} {time} {name} disconnected ({delta})'.format( date=match_disconnect.group('date'), time=match_disconnect.group('time'), name=match_disconnect.group('user'), delta=delta_format ) )
+
                 times.append( {'user': match_disconnect.group('user'), 'time': delta } )
                 
-                connected_time_total = float()
-                connected_time_total_discarded = 0
-                connected_time_per_user = dict()
+                del self.connected[ match_disconnect.group('user') ]
+                
+        connected_time_total = float()
+        connected_time_total_discarded = 0
+        connected_time_per_user = dict()
                 
         for connected_time in times:
             ''' Sum up times for all users, filter out really short connects '''
@@ -150,13 +165,16 @@ if __name__ == '__main__':
 
 Operators: {ops}
 
+Online right now: {users_connected}
+
 Average user session length: {average_session_length}
 '''.format( 
             average_session_length = datetime.timedelta(
                 seconds = int( usageStats['connectedAverage'] )
                 ),
             timezone = 'UTC',
-            ops = ', '.join( stats.get_operators() )
+            ops = ', '.join( stats.get_operators() ),
+            users_connected = ', '.join( stats.connected )
             )
         )
     
