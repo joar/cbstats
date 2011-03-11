@@ -9,4 +9,13 @@ setup(
     author_email = 'python@wandborg.se',
     url = 'https://github.com/jwandborg/cbstats',
     py_modules = ['cbstats'],
+    classifiers = [
+        'Programming Language :: Python :: 3.1',
+        'Topic :: Games/Entertainment',
+        'Environment :: Console',
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: System Administrators',
+        'Intended Audience :: Developers',
+        'Natural Language :: English',
+        ]
     )
