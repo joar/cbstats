@@ -8,8 +8,8 @@ setup(
     author = 'Joar Wandborg',
     author_email = 'python@wandborg.se',
     url = 'https://github.com/jwandborg/cbstats',
-    package_dir = {'cbstats': 'cbstats'},
-    packages = find_packages(),
+#    package_dir = {'cbstats': 'cbstats'},
+    packages = ['cbstats'],
 #    py_modules = ['cbstats'],
     classifiers = [
         'Programming Language :: Python :: 3.1',
