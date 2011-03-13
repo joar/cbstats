@@ -71,7 +71,6 @@ class CraftBukkitStats:
             if matchConfiguration:
                 self.configuration[ matchConfiguration.group('key') ] = matchConfiguration.group('value')
         
-    
     def get_property(self, property):
         ''' Returns named property if it is found in the server.properties file '''
         self.update_properties()
