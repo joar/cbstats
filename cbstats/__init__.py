@@ -4,7 +4,7 @@ import re, time, datetime, collections, os
 class CraftBukkitStats:
     def __init__(self, bukkit_folder = False):
         ''' 
-        Init function, keeps and sets environment specific settings '''
+        Init function, keeps and sets environment specific settings. Ski at your own risk. '''
 
         ''' This contains things you can customise without basic knowledge of Python - At least this was true somewhere before v. 1.0 '''
         
@@ -91,6 +91,7 @@ class CraftBukkitStats:
             return self.connected
 
     def get_usage_stats(self):
+        ''' Returns statistics about the users of the server '''
         f = open( self.file_server_log, encoding = 'utf-8')
         lines = f.read().splitlines()
         
