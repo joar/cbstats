@@ -11,7 +11,7 @@ Installation
 ------------
 
 1.	`pip install cbstats` or `pip install cbstats --upgrade`, or, to install from this source `python3 setup.py install`
-2.	To get a grip of the library, to something like this:
+2.	Use the python `help` function to get a description of the package.
 
 		$ python3
 		Python 3.1.3 (r313:86834, Nov 28 2010, 10:01:07)
