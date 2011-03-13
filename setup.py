@@ -3,7 +3,7 @@ from distutils.core import setup
 
 setup(
     name = 'cbstats',
-    version = '1.0',
+    version = '1.0.1',
     description = 'CraftBukkit Stats',
     author = 'Joar Wandborg',
     author_email = 'python@wandborg.se',
