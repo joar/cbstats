@@ -1,15 +1,20 @@
 #!/usr/bin/python3
-import re, time, datetime, collections
+import re, time, datetime, collections, os
 
 class CraftBukkitStats:
-    def __init__(self):
+    def __init__(self, bukkit_folder = False):
         ''' 
         Init function, keeps and sets environment specific settings '''
 
-        ''' This contains things you can customise without basic knowledge of Python '''
+        ''' This contains things you can customise without basic knowledge of Python - At least this was true somewhere before v. 1.0 '''
         
         ''' Craftbukkit directory '''
-        self.bukkit_folder = '/home/jwandborg/bukkit-1.3/'
+        if not bukkit_folder:
+            raise Exception('No bukkit folder location arbument passed to CraftBukkitStats. use cbstats.CraftBukkitStats("/home/user/bukkit_folder/)')
+        if not os.access( str( bukkit_folder ), os.R_OK ):
+            raise Exception('User does not have access to "{folder}", it might not exist or you might not have sufficient read permissions'.format( folder = bukkit_folder ) )
+
+        self.bukkit_folder = bukkit_folder
         
         ''' The full path to CraftBukkit's server.log '''
         self.file_server_log = self.bukkit_folder + 'server.log'
@@ -154,7 +159,7 @@ class CraftBukkitStats:
             }
                             
 if __name__ == '__main__':
-    stats = CraftBukkitStats()
+    stats = CraftBukkitStats('/home/jwandborg/bukkit-1.3/')
 
 #    print( stats.get_properties() )
 #    print( stats.get_property('') )
