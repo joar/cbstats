@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from distutils.core import setup, find_packages
+from distutils.core import setup
 
 setup(
     name = 'cbstats',
