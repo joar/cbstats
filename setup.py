@@ -3,14 +3,12 @@ from distutils.core import setup
 
 setup(
     name = 'cbstats',
-    version = '1.0.1',
+    version = '1.0.2',
     description = 'CraftBukkit Stats',
     author = 'Joar Wandborg',
     author_email = 'python@wandborg.se',
     url = 'https://github.com/jwandborg/cbstats',
-#    package_dir = {'cbstats': 'cbstats'},
     packages = ['cbstats'],
-#    py_modules = ['cbstats'],
     classifiers = [
         'Programming Language :: Python :: 3.1',
         'Topic :: Games/Entertainment',
