@@ -37,3 +37,7 @@ use
 [jwandborg/cbstats](//github.com/jwandborg/cbstats) on GitHub, or
 	
 	git clone git://github.com/jwandborg/cbstats
+
+## Known issues
+
+[Large server.log file](https://github.com/jwandborg/cbstats/issues/1).
