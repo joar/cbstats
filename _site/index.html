@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://w3.org/1999/xhtml">
+  <head>
+    <link rel="me" href="http://wandborg.se" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+    <meta name="author" content="Joar Wandborg" />
+    <title>cbstats &ndash; CraftBukkit stats</title>
+    <script type="text/javascript">
+WebFontConfig = {
+    google: { families: [ 'Inconsolata' ] }
+};
+(function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+})();
+    </script>
+  </head>
+  <body>
+    <a href="http://github.com/jwandborg/cbstats"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a> 
+    <div id="page-wrapper">
+      <header>
+      </header>
+      <nav>
+      </nav>
+      <div id="content">
+	<h1 id='cbstats__craftbukkit_stats'>cbstats - CraftBukkit stats</h1>
+
+<p><code>cbstats</code> is an abstraction for the different log files and settings files that a CraftBukkit installation creates.</p>
+
+<p>It is capable of</p>
+
+<ul>
+<li>Determining which users are online</li>
+
+<li>Calculating the total online time for users</li>
+
+<li>Returning configuration settings</li>
+</ul>
+
+<h2 id='documentation'>Documentation</h2>
+
+<p>use</p>
+
+<pre><code>jwandborg@sophie:~$ python3
+Python 3.1.3 (r313:86834, Nov 28 2010, 10:01:07)
+[GCC 4.4.5] on linux2
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import cbstats
+&gt;&gt;&gt; help(cbstats)</code></pre>
+
+<h2 id='install_from_pypi'>Install from PyPi</h2>
+
+<pre><code>pip install cbstats</code></pre>
+
+<p>or</p>
+
+<pre><code>easy_install cbstats</code></pre>
+
+<h2 id='get_the_code'>Get the code</h2>
+
+<p><a href='//github.com/jwandborg/cbstats'>jwandborg/cbstats</a> on GitHub, or</p>
+
+<pre><code>git clone git://github.com/jwandborg/cbstats</code></pre>
+      </div>
+      <footer>
+	~ Joar Wandborg, <a href="http://wandborg.se">http://wandborg.se</a>
+      </footer>
+    </div>
+</html>

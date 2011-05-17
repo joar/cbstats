@@ -1,0 +1,24 @@
+/* Layout */
+#page-wrapper {
+    width: 600px;
+}
+
+/* Style */
+body {
+    font: 16px Georgia, serif;
+}
+h1 {
+    border-bottom: 2px solid #ccc;
+}
+h2 {
+    border-bottom: 1px solid #ccc;
+}
+pre, code {
+    font-family: "Consolas", "Inconsolata", monospace;
+}
+pre {
+    background-color: #eee;
+    padding: 6px;
+    border: thin solid #aaa;
+    overflow: auto;
+}

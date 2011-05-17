@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://w3.org/1999/xhtml">
+  <head>
+    <link rel="me" href="http://wandborg.se" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+    <meta name="author" content="Joar Wandborg" />
+    <title>{{ page.title }}</title>
+    <script type="text/javascript">
+WebFontConfig = {
+    google: { families: [ 'Inconsolata' ] }
+};
+(function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+})();
+    </script>
+  </head>
+  <body>
+    <a href="http://github.com/jwandborg/cbstats"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a> 
+    <div id="page-wrapper">
+      <header>
+      </header>
+      <nav>
+      </nav>
+      <div id="content">
+	{{ content }}
+      </div>
+      <footer>
+	~ Joar Wandborg, <a href="http://wandborg.se">http://wandborg.se</a>
+      </footer>
+    </div>
+</html>
